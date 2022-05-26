@@ -1,23 +1,34 @@
-public class candy {
+public class candy{
   //fields
   int row;
   int col;
-  color colortype;
   int type;
   int scorePlus;
   
-  public candy(int r, int c, color assigncolor, int t){
+  final int RED = 0;
+  final int GREEN = 1;
+  final int ORANGE = 2;
+  final int BLUE = 3;
+  final int PURPLE = 4;
+  
+  public candy(int r, int c, int t){
     row = r;
     col = c;
-    colortype = assigncolor;
     type = t;
     scorePlus = 100;
   }
   
   
-  public candy(int c){
-    //color
+  public candy(int r, int c){
+    //int assigntype = (int)(Math.random() 4);
     //candy(0, c, );
+    
+    
+  }
+  
+  void display(){
+    //make a circle
+    //fill it with the color
   }
   
   
