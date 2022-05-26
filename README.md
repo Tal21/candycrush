@@ -5,3 +5,8 @@ UML Diagram Link: https://lucid.app/lucidchart/80d77052-2d69-455b-a989-8638adfc5
 
 
 May 24: (BOTH NICKO AND TALIA) Fully understood how to git merge. Also made all the files needed for the project and started to write code in the setup (background)
+
+May 25: 
+
+Nicko- I finished the setup of game class and started the methods.
+Talia- Finished candy class
