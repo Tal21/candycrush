@@ -3,42 +3,43 @@ int score = 0;
 int moves = 0;
 float progress;
 
-setup(){
+void setup(){
   size(1000, 800);
   progress = 0;
+  candy a = new candy(0, 0);
 }
 
-draw(){
+void draw(){
   run();
 }
 
-gameOver(){
+boolean gameOver(){
   return true;
 }
 
-updateScore(){
+void updateScore(){
 }
 
-updateBoard(){
+void updateBoard(){
 }
 
-mouseClicked(){
+void mouseClicked(){
 }
 
-mouseReleased(){
+void mouseReleased(){
 }
 
-getMoves(){
+int getMoves(){
   return moves;
 }
 
-getScore(){
+int getScore(){
   return score;
 }
 
-getProgress(){
+float getProgress(){
   return progress;
 }
 
-run(){
+void run(){
 }
