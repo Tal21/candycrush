@@ -1,17 +1,19 @@
-public class candy{
+public class Candy{
   //fields
   int row;
   int col;
   int type;
   int scorePlus;
+  color[] colors = {color(255, 10, 10), color(10, 255, 10), color(10, 10, 255), color(200, 0, 200)};
   
-  final int RED = 0;
-  final int GREEN = 1;
-  final int ORANGE = 2;
-  final int BLUE = 3;
-  final int PURPLE = 4;
   
-  public candy(int r, int c, int t){
+  int RED = 0;
+  int GREEN = 1;
+  int ORANGE = 2;
+  int BLUE = 3;
+  int PURPLE = 4;
+  
+  public Candy(int r, int c, int t){
     row = r;
     col = c;
     type = t;
@@ -19,17 +21,27 @@ public class candy{
   }
   
   
-  public candy(int r, int c){
-    //int assigntype = (int)(Math.random() 4);
-    //candy(0, c, );
+  public Candy(int r, int c){
+    int assigntype = (int)(Math.random() * 5);
+    new Candy(0, c, assigntype);
     
     
   }
   
   void display(){
-    //make a circle
-    //fill it with the color
+    fill(colors[type]);
+    ellipse(10, 10, 10, 10);
   }
+  
+  int getType(){
+    return type;
+  }
+  
+  int getPlus(){
+    return scorePlus;
+  }
+  
+  
   
   
 }

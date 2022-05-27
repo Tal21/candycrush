@@ -1,4 +1,3 @@
-
 int width = 8;
 int height = 8;
 ArrayList[][]<candy> board = new ArrayList[height][width];
