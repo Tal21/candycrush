@@ -9,8 +9,10 @@ May 24: (BOTH NICKO AND TALIA) Fully understood how to git merge. Also made all 
 May 25: 
 
 Nicko- I finished the setup of game class and started the methods.
-Talia- Finished candy class
+Talia- Started writing candy class
 
 May 26:
 
 Nicko- Confirmed algorithm is OK. Also started board, will finish at home later today
+Talia- Started writing methods for candy class.
+
