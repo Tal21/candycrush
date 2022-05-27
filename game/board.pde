@@ -1,1 +1,1 @@
-ArrayList[][]<candy> board = new ArrayList[8][8];
+//ArrayList[][]<Candy> board = new ArrayList[8][8];
