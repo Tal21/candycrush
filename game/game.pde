@@ -6,7 +6,7 @@ float progress;
 void setup(){
   size(1000, 800);
   progress = 0;
-  candy a = new candy(0, 0);
+  Candy a = new Candy(0, 0);
 }
 
 void draw(){

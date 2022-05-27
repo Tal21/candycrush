@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 int width = 8;
 int height = 8;
 ArrayList[][]<candy> board = new ArrayList[height][width];
@@ -29,3 +30,6 @@ boolean canMatch(){
 Queue<candy> boardCheck(){           //Checks if there is matching before gamestart/player
   return null;
 }
+=======
+//ArrayList[][]<Candy> board = new ArrayList[8][8];
+>>>>>>> 4a75051a38f88c7c880472bd3fc9b7b66d001ed7
