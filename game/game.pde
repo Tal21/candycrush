@@ -7,16 +7,12 @@ Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   void mouseClicked(){
-    
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
-   //<>//
   if(candyCLICK != null){
-    text("hi", 20, 20);
-    clicked.add(candyCLICK);
+    clicked.add(candyCLICK); //<>//
   }
   if(clicked.size() == 2){
     grid.swap();
-    text("SWAP DONE", 20, 20);
     grid.display();
   }
 }

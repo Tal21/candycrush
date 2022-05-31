@@ -24,7 +24,6 @@ public class board{
       Candy current = board[r][c];
       float d = dist(x,y,current.x,current.y);
       if(d <= current.radius){
-        text("hi", 20, 20);
         return current;
       }
     }
@@ -39,12 +38,13 @@ public class board{
   Candy second = clicked.remove(0);
   
   Candy firstTBS = board[(first.x - 30) / 70][(first.y - 120) / 70];
-  Candy secondTBS = board[(second.x - 30) / 70][(second.y - 30) / 70];
+  Candy secondTBS = board[(second.x - 30) / 70][(second.y - 120) / 70];
+    
+  int typeF = firstTBS.type;
+  int typeS = secondTBS.type;
   
-  Candy temp = firstTBS;
-  
-  board[(first.x - 30) / 70][(first.y - 120) / 70] = secondTBS;
-  board[(second.x - 30) / 70][(second.y - 30) / 70] = temp;
+  firstTBS.type = typeS;
+  secondTBS.type = typeF;
 }
 
   Candy getCandy(int i, int j){
