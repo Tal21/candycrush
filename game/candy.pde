@@ -13,25 +13,19 @@ public class Candy{
   int BLUE = 3;
   int PURPLE = 4;
   
-  public Candy(int xcor, int ycor, int t){
-    x= xcor;
-    y = ycor;
-    type = t;
-    scorePlus = 100;
-  }
-  
   
   public Candy(int xcor, int ycor){
     int assigntype = (int)(Math.random() * (5-1+1))+1;
     type = assigntype -1;
     x = xcor;
     y = ycor;
-    
-  }
+  } 
+
   
   void display(){
     fill(colors[type]);
     ellipse(x, y, 20, 20);
+ //<>//
   }
   
   int getType(){
