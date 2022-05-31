@@ -32,11 +32,6 @@ void updateScore(){
 void updateBoard(){
 }
 
-void mouseClicked(){
-}
-
-void mouseReleased(){
-}
 
 int getMoves(){
   return moves;
