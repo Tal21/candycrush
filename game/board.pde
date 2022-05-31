@@ -5,17 +5,12 @@ public class board{
   //float dropTimer;     commented until further notice, depending on whether or not we animate
   //float swapTimer;
   
-  
-  
-
-  
   public board(){
     for(int i = 0; i < board.length; i++){
       for(int j = 0; j < board[i].length; j++){
         board[i][j] = new Candy(30 + (i * 70), 120 + (j * 70));
       }
     }
-    //System.out.println("done");
   }
   
   Candy getCandyAt(int x, int y){
