@@ -14,27 +14,18 @@ public class Candy{
   int PURPLE = 4;
   
   
-  public Candy(int xcoor, int ycoor){
-    int assigntype = (int)(Math.random()* (5-1+1)) +1; //fix
-    x = xcoor;
-    y = ycoor;
+  public Candy(int xcor, int ycor){
+    int assigntype = (int)(Math.random() * (5-1+1))+1;
     type = assigntype -1;
-    scorePlus = 100;
-    //Candy(r, c, assigntype);  
-    
-  }
-  
-  public Candy(int xcoor, int ycoor, int typeassign){
-    x = xcoor;
-    y = ycoor;
-    type = typeassign;
-    scorePlus = 100;
-  }
+    x = xcor;
+    y = ycor;
+  } 
+
   
   void display(){
     fill(colors[type]);
-    ellipse(x, y, 50, 50);
-    
+    ellipse(x, y, 20, 20);
+ //<>//
   }
   
   int getType(){

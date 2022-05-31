@@ -6,47 +6,48 @@ public class board{
   //float swapTimer;
   
   public board(){
-   board = new Candy[8][8];
-   for (int i = 0; i < board.length; i++){
-     for (int k = 0; k< board[i].length; k++){
-       board[i][k] = new Candy(30*i, 30*k);
-     }
-   }
+    for(int i = 0; i < board.length; i++){
+      for(int j = 0; j < board[i].length; j++){
+        board[i][j] = new Candy(j*30, i*30);
+      }
+    }
+    //System.out.println("done");
   }
   
-  void display(){
-    for (int i = 0; i < board.length; i++){
-     for (int k = 0; k< board[i].length; k++){
-       Candy temp = board[i][k];
-       temp.display();
-       System.out.println(i);
-     }
-   }
+  Candy[][] updateBoard(){
+    return board;
+  }
+  
+  boolean loseCheck(){
+    for( int i = 0; i < height; i++){
+      for(int j = 0; j < width; j++){
+        
+      }
+    }
+    return false;
+  }
+  
+  boolean powerActivated(){
+    return false;
   }
 
-candy[][] updateBoard(board){
-  return board;
-}
-
-boolean loseCheck(){
-  for( int i = 0; i < height; i++){
-    for(int j = 0; j < width; j++){
-      
-  return false;
-}
-
-boolean powerActivated(){
-  return false;
-}
-
-void display(){
-}
-
-boolean canMatch(){
-  return false;
-}
-
-Queue<candy> boardCheck(){           //Checks if there is matching before gamestart/player
-  return null;
->>>>>>> d8d8cae2bc5903a0747923f45ba58e9231b0b8a9
+  
+  void display(){
+    for(int i = 0; i < board.length; i++){
+      for(int j = 0; j < board[i].length; j++){
+        //Candy temp = board[i][j];
+        //board[i][j].display();
+        //System.out.println(i);
+      }
+    }
+  }
+  
+  boolean canMatch(){
+    return false;
+  }
+  /*
+  Queue<candy> boardCheck(){           //Checks if there is matching before gamestart/player
+    return null;
+  }
+  */
 }
