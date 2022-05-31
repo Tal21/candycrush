@@ -14,7 +14,8 @@ void setup(){
  // Candy a = grid.getCandy(0,0);
   grid.display();
 } //<>//
- //<>//
+
+
 void draw(){
   //run();
   //grid.display();
