@@ -37,6 +37,7 @@ public class board{
   Candy first = clicked.remove(0);
   Candy second = clicked.remove(0);
   
+ 
   Candy firstTBS = board[(first.x - 30) / 70][(first.y - 120) / 70];
   Candy secondTBS = board[(second.x - 30) / 70][(second.y - 120) / 70];
     

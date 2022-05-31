@@ -32,6 +32,10 @@ void draw(){
   //grid.display();
   //System.out.println("done");
   
+  //scorebox
+  fill(255);
+  rect(700, 200, 200, 100);
+  
 }
 
 boolean gameOver(){

@@ -25,7 +25,7 @@ public class Candy{
   
   void display(){
     fill(colors[type]);
-    circle(x,y,radius);
+    circle(x,y,radius); //<>//
  //<>//
   }
   
@@ -40,6 +40,14 @@ public class Candy{
   
   int getPlus(){
     return scorePlus;
+  }
+  
+  int getX(){
+    return x;
+  }
+  
+  int getY(){
+    return y;
   }
   
   
