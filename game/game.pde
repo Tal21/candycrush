@@ -35,7 +35,14 @@ void draw(){
   //scorebox
   fill(255);
   rect(700, 200, 200, 100);
+  fill(0);
+  text("Score: " + score, 750, 225);
   
+  //movesbox
+  fill(255);
+  rect(700, 500, 200, 100);
+  fill(0);
+  text("Moves: "+ moves, 750, 525);
 }
 
 boolean gameOver(){
