@@ -19,3 +19,8 @@ Talia- Started writing methods for candy class.
 May 27:
 
 Talia - Finished writing display() for candy and started making board
+
+May 30:
+
+Talia - Finished board
+Nicko - Finished basic version of swap method
