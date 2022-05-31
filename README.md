@@ -16,3 +16,6 @@ May 26:
 Nicko- Confirmed algorithm is OK. Also started board, will finish at home later today
 Talia- Started writing methods for candy class.
 
+May 27:
+
+Talia - Finished writing display() for candy and started making board
