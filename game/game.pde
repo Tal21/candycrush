@@ -2,15 +2,22 @@ String title = "CANDY CRUSH";
 int score = 0;
 int moves = 0;
 float progress;
+board grid;
+Candy a;
 
 void setup(){
   size(1000, 800);
   progress = 0;
-  Candy a = new Candy(0, 0);
+  //Candy a = new Candy(0, 0);
+  grid = new board();
+ // a = new Candy(30, 30);
 }
-
+ //<>//
 void draw(){
-  run();
+  //run();
+  grid.display();
+  //System.out.println("done");
+  
 }
 
 boolean gameOver(){
