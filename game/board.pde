@@ -38,13 +38,21 @@ public class board{
   Candy first = clicked.remove(0);
   Candy second = clicked.remove(0);
   
+  /*
   Candy firstTBS = board[(first.x - 30) / 70][(first.y - 120) / 70];
   Candy secondTBS = board[(second.x - 30) / 70][(second.y - 30) / 70];
+  */
   
-  Candy temp = firstTBS;
+  Candy temp = first;
   
-  board[(first.x - 30) / 70][(first.y - 120) / 70] = secondTBS;
-  board[(second.x - 30) / 70][(second.y - 30) / 70] = temp;
+  //temp.setXY(secondTBS.getX(), secondTBS.getY());
+  //secondTBS.setXY(first.getX(), first.getX());
+  
+  board[(first.x - 30) / 70][(first.y - 120) / 70] = second;//secondTBS; //first
+  board[(second.x - 30) / 70][(second.y - 30) / 70] = temp; //second 
+  
+  //board[(second.x - 30) / 70][(second.y - 30) / 70].setXY(second.getX(), second.getY());
+  //board[(first.x - 30) / 70][(first.y - 120) / 70].setXY(temp.getX(), temp.getY());
 }
 
   Candy getCandy(int i, int j){
