@@ -29,6 +29,11 @@ public class Candy{
  //<>//
   }
   
+  void setXY(int xNEW, int yNEW){
+    x = xNEW;
+    y = yNEW;
+  }
+  
   int getType(){
     return type;
   }

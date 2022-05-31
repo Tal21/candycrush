@@ -5,20 +5,9 @@ public class board{
   //float dropTimer;     commented until further notice, depending on whether or not we animate
   //float swapTimer;
   
-  ArrayList<Candy> clicked = new ArrayList<Candy>();
   
-  void mouseClicked(){
-    text("hi", 20, 20);
-  Candy candyCLICK = getCandyAt(mouseX,mouseY);
   
-  if(candyCLICK != null){
-    clicked.add(candyCLICK);
-  }
-  if(clicked.size() == 2){
-    swap();
-    text("SWAP DONE", 20, 20);
-  }
-}
+
   
   public board(){
     for(int i = 0; i < board.length; i++){
@@ -30,11 +19,12 @@ public class board{
   }
   
   Candy getCandyAt(int x, int y){
-  for(int r = 0; r < 9; r++){
-    for(int c = 0; c < 9; c++){
+  for(int r = 0; r < 8; r++){
+    for(int c = 0; c < 8; c++){
       Candy current = board[r][c];
       float d = dist(x,y,current.x,current.y);
       if(d <= current.radius){
+        text("hi", 20, 20);
         return current;
       }
     }
@@ -48,11 +38,13 @@ public class board{
   Candy first = clicked.remove(0);
   Candy second = clicked.remove(0);
   
-  Candy firstTBS = board[(first.x - 10) / 10][(first.y - 10) / 10];
-  Candy secondTBS = board[(second.x - 10) / 10][(second.y - 10) / 10];
+  Candy firstTBS = board[(first.x - 30) / 70][(first.y - 120) / 70];
+  Candy secondTBS = board[(second.x - 30) / 70][(second.y - 30) / 70];
   
-  board[(first.x - 10) / 10][(first.y - 10) / 10] = secondTBS;
-  board[(second.x - 10) / 10][(second.y - 10) / 10] = firstTBS;
+  Candy temp = firstTBS;
+  
+  board[(first.x - 30) / 70][(first.y - 120) / 70] = secondTBS;
+  board[(second.x - 30) / 70][(second.y - 30) / 70] = temp;
 }
 
   Candy getCandy(int i, int j){
