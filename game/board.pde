@@ -14,6 +14,11 @@ public class board{
     //System.out.println("done");
   }
   
+  Candy getCandy(int i, int j){
+    return board[i][j];
+  }
+    
+  
   Candy[][] updateBoard(){
     return board;
   }
@@ -35,9 +40,9 @@ public class board{
   void display(){
     for(int i = 0; i < board.length; i++){
       for(int j = 0; j < board[i].length; j++){
-        //Candy temp = board[i][j];
-        //board[i][j].display();
-        //System.out.println(i);
+        Candy temp = getCandy(i,j);
+        temp.display();
+       
       }
     }
   }
