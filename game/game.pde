@@ -13,7 +13,8 @@ void setup(){
   grid = new board();
  // a = new Candy(30, 30);
 } //<>//
- //<>//
+
+
 void draw(){
   //run();
   grid.display();
