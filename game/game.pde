@@ -18,7 +18,7 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
 }
 
 void setup(){
-  size(1000, 800);
+  size(1000, 700);
   progress = 0;
   //Candy a = new Candy(0, 0); //<>//
   grid = new board();
@@ -32,17 +32,23 @@ void draw(){
   //grid.display();
   //System.out.println("done");
   
+  //background
+  PImage background = loadImage("backdrop.png");
+  image(background, -300, 0);
+  
+  
   //scorebox
   fill(255);
-  rect(700, 200, 200, 100);
+  rect(700, 50, 200, 100);
   fill(0);
-  text("Score: " + score, 750, 225);
+  text("Score: " + score, 750, 25);
   
   //movesbox
   fill(255);
-  rect(700, 500, 200, 100);
+  rect(700, 100, 200, 100);
   fill(0);
   text("Moves: "+ moves, 750, 525);
+  grid.display();
 }
 
 boolean gameOver(){
