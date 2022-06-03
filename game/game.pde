@@ -23,7 +23,7 @@ void setup(){
   //Candy a = new Candy(0, 0); //<>//
   grid = new board();
  // Candy a = grid.getCandy(0,0);
-  grid.display();
+  //grid.display();
 } //<>//
 
 
@@ -39,15 +39,15 @@ void draw(){
   
   //scorebox
   fill(255);
-  rect(700, 50, 200, 100);
+  rect(700, 50, 200, 75);
   fill(0);
-  text("Score: " + score, 750, 25);
+  text("Score: " + score, 725, 75);
   
   //movesbox
   fill(255);
-  rect(700, 100, 200, 100);
+  rect(700, 150, 200, 75);
   fill(0);
-  text("Moves: "+ moves, 750, 525);
+  text("Moves: "+ moves, 725, 175);
   grid.display();
 }
 
