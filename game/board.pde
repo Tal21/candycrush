@@ -47,6 +47,9 @@ public class board{
     return board[i][j];
   }
     
+  Candy[] checkBoard(){
+    return new Candy[0];
+  }
   
   Candy[][] updateBoard(){
     return board;
