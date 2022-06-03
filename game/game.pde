@@ -9,7 +9,7 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
   void mouseClicked(){
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
   if(candyCLICK != null){
-    clicked.add(candyCLICK); //<>//
+    clicked.add(candyCLICK); //<>// //<>//
   }
   if(clicked.size() == 2){
     grid.swap();
@@ -20,11 +20,11 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
 void setup(){
   size(1000, 700);
   progress = 0;
-  //Candy a = new Candy(0, 0); //<>//
+  //Candy a = new Candy(0, 0); //<>// //<>//
   grid = new board();
  // Candy a = grid.getCandy(0,0);
   //grid.display();
-} //<>//
+} //<>// //<>//
 
 
 void draw(){
@@ -48,6 +48,7 @@ void draw(){
   rect(700, 150, 200, 75);
   fill(0);
   text("Moves: "+ moves, 725, 175);
+  
   grid.display();
 }
 
@@ -75,4 +76,6 @@ float getProgress(){
 }
 
 void run(){
+  //grid.checkboard
+  //grid.update board
 }
