@@ -13,18 +13,17 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   void mouseClicked(){
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
-  if(candyCLICK != null){
-<<<<<<< HEAD
-    if(clicked.size() == 0){
-      clicked.add(candyCLICK);
-    } else{
+  if(candyCLICK != null && clicked.size() == 0){
+    clicked.add(candyCLICK); //<>// //<>//
+  }
+else{
       int row = (candyCLICK.x-30) / 70;
       int col = (candyCLICK.y-120) / 70;
-      
-      Candy thing = clicked.remove(0);
+     
+      Candy thing = clicked.get(0);
       int rowOLD = (thing.x-30) / 70;
       int colOLD = (thing.y-120) / 70;
-      
+     
       for(int i = -1; i < 2; i++){
         for(int j = -1; j < 2; j++){
           if(inBounds(row+i,col+j)){
@@ -34,16 +33,14 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
           }
         }
       } //<>//
-=======
-    clicked.add(candyCLICK); //<>// //<>//
->>>>>>> dc85f555028878e773d0512643a10c59ad094b33
   }
   if(clicked.size() == 2){
     grid.swap();
     grid.display();
   }
 }
-  }
+ 
+  
 
 void setup(){
   size(1000, 700);
@@ -54,7 +51,7 @@ void setup(){
   //grid.display();
 } //<>// //<>//
 
-
+ //<>//
 void draw(){
   //run();
   //grid.display();
@@ -66,11 +63,11 @@ void draw(){
   
   
   //scorebox
-  fill(255);
+  fill(255); //<>//
   rect(700, 50, 200, 75);
   fill(0);
   text("Score: " + score, 725, 75);
-  
+   //<>//
   //movesbox
   fill(255);
   rect(700, 150, 200, 75);
