@@ -28,7 +28,7 @@ void setup(){
 
 
 void draw(){
-  //run();
+  run();
   //grid.display();
   //System.out.println("done");
   
@@ -76,6 +76,11 @@ float getProgress(){
 }
 
 void run(){
-  //grid.checkboard
+  ArrayList<Candy> print = grid.checkBoard();
+  System.out.println(print.size());
+  while(print.size() > 0){
+    Candy test = print.remove(0);
+    System.out.println(test.brow + " " + test.bcol);
+  }
   //grid.update board
 }

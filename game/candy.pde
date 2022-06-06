@@ -2,6 +2,8 @@ public class Candy{
   //fields
   int x;
   int y;
+  int brow;
+  int bcol;
   int type;
   int scorePlus;
   int radius = 40;
@@ -15,11 +17,13 @@ public class Candy{
   int PURPLE = 4;
   
   
-  public Candy(int xcor, int ycor){
+  public Candy(int xcor, int ycor, int boardrow, int boardcol){
     int assigntype = (int)(Math.random() * (5-1+1))+1;
     type = assigntype -1;
     x = xcor;
     y = ycor;
+    brow = boardrow;
+    bcol = boardcol;
   } 
 
   
