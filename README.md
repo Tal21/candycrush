@@ -24,3 +24,20 @@ May 30:
 
 Talia - Finished board
 Nicko - Finished basic version of swap method
+
+
+June 1:
+Talia- Working on Drop algorithm
+Nicko- Figuring out adjacent swap
+
+June 2:
+Talia- Made background and scores are working
+Nicko- Adjacent swap works
+
+June 3: 
+Talia- Moves are starting to be tracked
+Nicko- Nevermind, adjacent swap only works in some instances. Need to be more consistent.
+
+June 6:
+Talia- Started checkboard (if theres possible swaps, else shuffle)
+Nicko- FINALLY FINISHED SWAP. Swap works now, starting match check (if u can break candy)
