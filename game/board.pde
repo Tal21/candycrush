@@ -103,6 +103,7 @@ public class board{
       board[elim.bcol][elim.brow] = null;
     }
     //call falling animation
+    
     //return board;
   }
   
@@ -124,8 +125,9 @@ public class board{
     for(int i = 0; i < board.length; i++){
       for(int j = 0; j < board[i].length; j++){
         Candy temp = getCandy(i,j);
-        temp.display();
-       
+        if(temp != null){
+          temp.display();
+        }
       }
     }
   }

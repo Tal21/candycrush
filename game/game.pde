@@ -9,7 +9,7 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
   private boolean inBounds(int r, int c){
     return 0 <= r && 0 <= c && grid.width > r && grid.height > c;
   }
- //<>// //<>//
+ //<>// //<>// //<>//
 
   void mouseClicked(){
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
@@ -20,11 +20,11 @@ else{
       int row = (candyCLICK.x-30) / 70;
       int col = (candyCLICK.y-120) / 70;
      
-      Candy thing = clicked.get(0); //<>// //<>//
+      Candy thing = clicked.get(0); //<>// //<>// //<>//
       int rowOLD = (thing.x-30) / 70;
       int colOLD = (thing.y-120) / 70;
      
-      for(int i = -1; i < 2; i++){ //<>// //<>//
+      for(int i = -1; i < 2; i++){ //<>// //<>// //<>//
         for(int j = -1; j < 2; j++){
           if(inBounds(row+i,col+j) && (i == 0 || j == 0)){
             if(row+i == rowOLD && col+j == colOLD){
@@ -104,11 +104,11 @@ float getProgress(){
 void run(){
  
   ArrayList<Candy> print = grid.checkBoard();
-  System.out.println(print.size());
+  /*System.out.println(print.size());
   while(print.size() > 0){
     Candy test = print.remove(0);
     System.out.println(test.brow + " " + test.bcol);
   }
-  
-  //grid.updateBoard(print);
+  */
+  grid.updateBoard(print);
 }
