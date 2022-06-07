@@ -76,6 +76,7 @@ public class board{
     matches.clear();
     typecheck = board[0][0].getType();
     for(int i = 0; i < board.length; i++){
+      typecheck = board[0][i].getType();
       for(int j = 0; j < board[i].length; j++){
         if(typecheck == board[j][i].getType()){
           matches.add(board[j][i]);
@@ -90,12 +91,20 @@ public class board{
           }
         } 
       }
+      matches.clear();
     }
     return output;
   }
   
-  Candy[][] updateBoard(){
-    return board;
+  void updateBoard(ArrayList<Candy> tobreak){
+    Candy elim;
+    while(tobreak.size() > 0){
+      elim = tobreak.remove(0);
+      board[elim.bcol][elim.brow] = null;
+    }
+    //call falling animation
+    
+    //return board;
   }
   
   boolean loseCheck(){
@@ -116,8 +125,9 @@ public class board{
     for(int i = 0; i < board.length; i++){
       for(int j = 0; j < board[i].length; j++){
         Candy temp = getCandy(i,j);
-        temp.display();
-       
+        if(temp != null){
+          temp.display();
+        }
       }
     }
   }
@@ -125,9 +135,8 @@ public class board{
   boolean canMatch(){
     return false;
   }
-  /*
-  Queue<candy> boardCheck(){           //Checks if there is matching before gamestart/player
-    return null;
+  
+  void fall(){
+    
   }
-  */
 }
