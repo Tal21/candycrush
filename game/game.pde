@@ -113,11 +113,11 @@ float getProgress(){
 void run(){
  
   ArrayList<Candy> print = grid.checkBoard();
-  System.out.println(print.size());
+  /*System.out.println(print.size());
   while(print.size() > 0){
     Candy test = print.remove(0);
     System.out.println(test.brow + " " + test.bcol);
   }
-  
-  //grid.updateBoard(print);
+  */
+  grid.updateBoard(print);
 }
