@@ -9,17 +9,22 @@ Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   private boolean inBounds(int r, int c){
-    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>//
+    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>//
   }
  //<>// //<>// //<>//
 
   void mouseClicked(){
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
-  if(candyCLICK != null && clicked.size() == 0){
-    clicked.add(candyCLICK); //<>// //<>// //<>//
+  
+  if(candyCLICK == null){
+    return;
+  }
+  
+  if(candyCLICK != null && clicked.size() == 0){ //<>//
+    clicked.add(candyCLICK); //<>// //<>// //<>// //<>// //<>//
   }
 else{
-      int row = (candyCLICK.x-30) / 70;
+      int row = (candyCLICK.x-30) / 70; //<>//
       int col = (candyCLICK.y-120) / 70; //<>//
      
       Candy thing = clicked.get(0); //<>// //<>// //<>//
@@ -34,32 +39,38 @@ else{
             }
           }
         }
-      } //<>//
+      } //<>// //<>//
+      
+      if(clicked.size() == 1){
+        clicked.remove(0);
+      }
   }
   if(clicked.size() == 2){
     grid.swap();
     grid.display();
     moves --;
-  }
+    run();
+  } 
+
 }
  
-  
-
+   //<>//
+ //<>//
 void setup(){
-  size(1000, 700);
-  progress = 0;
-  //Candy a = new Candy(0, 0); 
-  grid = new board();
- // Candy a = grid.getCandy(0,0);
+  size(1000, 700); //<>//
+  progress = 0; //<>//
+  grid = new board(); //<>//
+ // Candy a = grid.getCandy(0,0); //<>//
   //grid.display();
-  run();
+  run(); //<>//
 } //<>// //<>// //<>//
-
+ //<>//
  //<>// //<>//
 void draw(){
   //grid.display();
   //System.out.println("done");
   
+<<<<<<< HEAD
  
   if(ingame){
     //background
