@@ -38,9 +38,15 @@ public class board{
     
   int typeF = firstTBS.type;
   int typeS = secondTBS.type;
+  int browFOld = first.brow;
+  int bcolFOld = first.bcol;
   
   firstTBS.type = typeS;
   secondTBS.type = typeF;
+  
+  
+  //finish swapping brow and bcol of the swaps. Then, work on reverse swapping when there are no 
+  //matches after swap.
 }
 
   Candy getCandy(int i, int j){
