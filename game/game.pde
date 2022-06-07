@@ -13,6 +13,11 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   void mouseClicked(){
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
+  
+  if(candyCLICK == null){
+    return;
+  }
+  
   if(candyCLICK != null && clicked.size() == 0){
     clicked.add(candyCLICK); //<>// //<>// //<>// //<>//
   }
