@@ -56,24 +56,27 @@ public class board{
   ArrayList<Candy> checkBoard(){
     ArrayList<Candy> output = new ArrayList<Candy>();
     ArrayList<Candy> matches = new ArrayList<Candy>();
-    int typecheck;
+    int typecheck = board[0][0].getType();
     
     //vertical
     for(int i = 0; i < board.length; i++){
-      typecheck = board[i][0].getType();
+      if(board[i][0] != null){typecheck = board[i][0].getType();}
+      
       for(int j = 0; j < board[i].length; j++){
-        if(typecheck == board[i][j].getType()){
-          matches.add(board[i][j]);
-        }else{
-          if(matches.size() >= 3){
-            output.addAll(matches);
-            matches.clear();
-          }else{
-            matches.clear();
+        if(board[i][j] != null){
+          if(typecheck == board[i][j].getType()){
             matches.add(board[i][j]);
-            typecheck = board[i][j].getType();
-          }
-        } 
+          }else{
+            if(matches.size() >= 3){
+              output.addAll(matches);
+              matches.clear();
+            }else{
+              matches.clear();
+              matches.add(board[i][j]);
+              typecheck = board[i][j].getType();
+            }
+          } 
+        }
       }
       matches.clear();
     }
@@ -82,20 +85,22 @@ public class board{
     matches.clear();
     typecheck = board[0][0].getType();
     for(int i = 0; i < board.length; i++){
-      typecheck = board[0][i].getType();
+      if(board[0][i] != null){typecheck = board[0][i].getType();}
       for(int j = 0; j < board[i].length; j++){
-        if(typecheck == board[j][i].getType()){
-          matches.add(board[j][i]);
-        }else{
-          if(matches.size() >= 3){
-            output.addAll(matches);
-            matches.clear();
-          }else{
-            matches.clear();
+        if(board[j][i] != null){
+          if(typecheck == board[j][i].getType()){
             matches.add(board[j][i]);
-            typecheck = board[j][i].getType();
+          }else{
+            if(matches.size() >= 3){
+              output.addAll(matches);
+              matches.clear();
+            }else{
+              matches.clear();
+              matches.add(board[j][i]);
+              typecheck = board[j][i].getType();
+            }
           }
-        } 
+        }
       }
       matches.clear();
     }
