@@ -17,7 +17,7 @@ public class Candy{
   int PURPLE = 4;
   
   
-  public Candy(int xcor, int ycor, int boardrow, int boardcol){
+  public Candy(int xcor, int ycor, int boardcol, int boardrow){
     int assigntype = (int)(Math.random() * (5-1+1))+1;
     type = assigntype -1;
     x = xcor;
@@ -29,8 +29,8 @@ public class Candy{
   
   void display(){
     fill(colors[type]);
-    circle(x,y,radius); //<>//
- //<>//
+    circle(x,y,radius); //<>// //<>//
+ //<>// //<>//
   }
   
   void setXY(int xNEW, int yNEW){
