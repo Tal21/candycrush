@@ -1,13 +1,15 @@
 String title = "CANDY CRUSH";
 int score = 0;
-int moves = 0;
+int moves = 10;
+int level = 1;
+boolean ingame = true;
 float progress;
 board grid;
 Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   private boolean inBounds(int r, int c){
-    return 0 <= r && 0 <= c && grid.width > r && grid.height > c;
+    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>//
   }
  //<>// //<>// //<>//
 
@@ -18,11 +20,11 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
   }
 else{
       int row = (candyCLICK.x-30) / 70;
-      int col = (candyCLICK.y-120) / 70;
+      int col = (candyCLICK.y-120) / 70; //<>//
      
       Candy thing = clicked.get(0); //<>// //<>// //<>//
       int rowOLD = (thing.x-30) / 70;
-      int colOLD = (thing.y-120) / 70;
+      int colOLD = (thing.y-120) / 70; //<>//
      
       for(int i = -1; i < 2; i++){ //<>// //<>// //<>//
         for(int j = -1; j < 2; j++){
@@ -37,6 +39,7 @@ else{
   if(clicked.size() == 2){
     grid.swap();
     grid.display();
+    moves --;
   }
 }
  
@@ -54,28 +57,32 @@ void setup(){
 
  //<>// //<>//
 void draw(){
-  //run();
   //grid.display();
   //System.out.println("done");
   
-  //background
-  PImage background = loadImage("backdrop.png");
-  image(background, -300, 0);
-  
-  
-  //scorebox
-  fill(255); //<>// //<>//
-  rect(700, 50, 200, 75);
-  fill(0);
-  text("Score: " + score, 725, 75);
-   //<>// //<>//
-  //movesbox
-  fill(255);
-  rect(700, 150, 200, 75);
-  fill(0);
-  text("Moves: "+ moves, 725, 175);
-  
-  grid.display();
+ 
+  if(ingame){
+    //background
+    PImage background = loadImage("backdrop.png");
+    image(background, -300, 0);
+    
+    
+    //scorebox
+    fill(255); //<>// //<>//
+    rect(700, 50, 200, 75);
+    fill(0);
+    text("Score: " + score, 725, 75);
+     //<>// //<>//
+    //movesbox
+    fill(255);
+    rect(700, 150, 200, 75);
+    fill(0);
+    text("Moves: "+ moves, 725, 175);
+    
+    
+    //run();
+    grid.display();
+  }
 }
 
 boolean gameOver(){
@@ -110,5 +117,5 @@ void run(){
     System.out.println(test.brow + " " + test.bcol);
   }
   */
-  grid.updateBoard(print);
+  //grid.updateBoard(print);
 }
