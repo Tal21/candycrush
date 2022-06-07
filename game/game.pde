@@ -19,7 +19,7 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
   }
   
   if(candyCLICK != null && clicked.size() == 0){
-    clicked.add(candyCLICK); //<>// //<>// //<>// //<>//
+    clicked.add(candyCLICK); //<>// //<>// //<>// //<>// //<>//
   }
 else{
       int row = (candyCLICK.x-30) / 70;
@@ -37,7 +37,7 @@ else{
             }
           }
         }
-      } //<>//
+      } //<>// //<>//
       
       if(clicked.size() == 1){
         clicked.remove(0);
@@ -46,20 +46,21 @@ else{
   if(clicked.size() == 2){
     grid.swap();
     grid.display();
+    run();
   } 
 }
  
-  
+   //<>//
  //<>//
 void setup(){
-  size(1000, 700);
+  size(1000, 700); //<>//
   progress = 0; //<>//
-  grid = new board();
+  grid = new board(); //<>//
  // Candy a = grid.getCandy(0,0); //<>//
   //grid.display();
-  run();
+  run(); //<>//
 } //<>// //<>// //<>//
-
+ //<>//
  //<>// //<>//
 void draw(){
   //run();
@@ -67,15 +68,15 @@ void draw(){
   //System.out.println("done");
   
   //background
-  PImage background = loadImage("backdrop.png");
+  PImage background = loadImage("backdrop.png"); //<>//
   image(background, -300, 0); //<>//
   
   
-  //scorebox
+  //scorebox //<>//
   fill(255); //<>// //<>// //<>//
   rect(700, 50, 200, 75);
   fill(0);
-  text("Score: " + score, 725, 75);
+  text("Score: " + score, 725, 75); //<>//
    //<>// //<>//
   //movesbox
   fill(255);
