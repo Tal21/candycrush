@@ -39,5 +39,13 @@ Talia- Moves are starting to be tracked
 Nicko- Nevermind, adjacent swap only works in some instances. Need to be more consistent.
 
 June 6:
+
+
 Talia- Started checkboard (if theres possible swaps, else shuffle)
+
 Nicko- FINALLY FINISHED SWAP. Swap works now, starting match check (if u can break candy)
+
+
+June 8:
+
+Talia AND Nicko- Working on fall method. This is the last thing we need to do before we can say we got the basic game down. After this, we'll play around with powerups and more levels
