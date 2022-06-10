@@ -9,7 +9,7 @@ Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   private boolean inBounds(int r, int c){
-    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>// //<>//
+    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>// //<>// //<>//
   }
  //<>// //<>// //<>//
 
@@ -19,17 +19,17 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
   if(candyCLICK == null){
     return;
   }
-  
+   //<>//
   if(candyCLICK != null && clicked.size() == 0){ //<>// //<>//
     clicked.add(candyCLICK); //<>// //<>// //<>// //<>// //<>//
   }
 else{
       int row = (candyCLICK.x-30) / 70; //<>// //<>//
-      int col = (candyCLICK.y-120) / 70; //<>//
+      int col = (candyCLICK.y-120) / 70; //<>// //<>//
      
       Candy thing = clicked.get(0); //<>// //<>// //<>//
       int rowOLD = (thing.x-30) / 70;
-      int colOLD = (thing.y-120) / 70; //<>//
+      int colOLD = (thing.y-120) / 70; //<>// //<>//
      
       for(int i = -1; i < 2; i++){ //<>// //<>// //<>//
         for(int j = -1; j < 2; j++){
@@ -37,7 +37,7 @@ else{
             if(row+i == rowOLD && col+j == colOLD){
               clicked.add(candyCLICK);
             }
-          }
+          } //<>//
         }
       } //<>// //<>//
       
@@ -48,36 +48,36 @@ else{
   if(clicked.size() == 2){
     grid.swap();
     grid.display();
-    moves --;
-    run();
-  } 
-
-}
- 
-   //<>//
+    moves--;
+ //   run();
+  }  //<>//
  //<>//
-void setup(){
+}
+  //<>//
+   //<>// //<>//
+ //<>// //<>//
+void setup(){ //<>//
   size(1000, 700); //<>//
-  progress = 0; //<>//
-  grid = new board(); //<>//
- // Candy a = grid.getCandy(0,0); //<>//
-  //grid.display();
-  run(); //<>//
+  progress = 0; //<>// //<>//
+  grid = new board(); //<>// //<>//
+ // Candy a = grid.getCandy(0,0); //<>// //<>//
+  //grid.display(); //<>//
+ // run(); //<>//
 } //<>// //<>// //<>//
  //<>//
  //<>// //<>//
 void draw(){
   //grid.display();
-  //System.out.println("done");
- 
+  //System.out.println("done"); //<>//
+  //<>//
     //background
     PImage background = loadImage("backdrop.png");
-    image(background, -300, 0);
-    
+    image(background, -300, 0); //<>//
+     //<>//
     
     //scorebox
-    fill(255); //<>// //<>//
-    rect(700, 50, 200, 75);
+    fill(255); //<>// //<>// //<>//
+    rect(700, 50, 200, 75); //<>//
     fill(0);
     text("Score: " + score, 725, 75);
      //<>// //<>//
