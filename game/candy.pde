@@ -29,8 +29,8 @@ public class Candy{
   
   void display(){
     fill(colors[type]);
-    circle(x,y,radius); //<>// //<>//
- //<>// //<>//
+    circle(x,y,radius); //<>// //<>// //<>//
+ //<>// //<>// //<>//
   }
   
   void setXY(int xNEW, int yNEW){
