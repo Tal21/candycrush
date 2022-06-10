@@ -49,3 +49,12 @@ Nicko- FINALLY FINISHED SWAP. Swap works now, starting match check (if u can bre
 June 8:
 
 Talia AND Nicko- Working on fall method. This is the last thing we need to do before we can say we got the basic game down. After this, we'll play around with powerups and more levels
+
+
+June 10:
+
+
+Nicko- Reverse swap when invalid move is made. Also swap interacts with number of moves made
+
+
+Talia- Working on fall method
