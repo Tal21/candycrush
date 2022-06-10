@@ -113,9 +113,7 @@ public class board{
       elim = tobreak.get(i);
       board[elim.bcol][elim.brow] = null;
     }
-    //call falling animation
-    
-    //return board;
+    //falling = true;
   }
   
   boolean loseCheck(){
@@ -148,12 +146,12 @@ public class board{
   }
   
   void fall(){
-    for(int col = 0; col < board.length(); col++){
-      for(int row = 0; row < board[col].length(); row++){
-        if(board[col][row] == null){
-          
-        }
+    for(int cols = 0; cols < board.length; cols++){
+      for(int rows = board[cols].length - 1; rows >= 0; rows--){
+        //check if in place if not then move a little
+        //if in place then everything snaps
       }
+      
     }
   }
 }
