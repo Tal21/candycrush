@@ -32,21 +32,27 @@ public class board{
   Candy first = clicked.remove(0);
   Candy second = clicked.remove(0);
   
+  int matchesOLD = (checkBoard()).size();
  
   Candy firstTBS = board[(first.x - 30) / 70][(first.y - 120) / 70];
   Candy secondTBS = board[(second.x - 30) / 70][(second.y - 120) / 70];
     
   int typeF = firstTBS.type;
   int typeS = secondTBS.type;
-  int browFOld = first.brow;
-  int bcolFOld = first.bcol;
+ // int browFOld = first.brow;
+//  int bcolFOld = first.bcol;
   
   firstTBS.type = typeS;
   secondTBS.type = typeF;
   
+  int matchesNEW = (checkBoard()).size();
   
-  //finish swapping brow and bcol of the swaps. Then, work on reverse swapping when there are no 
-  //matches after swap.
+  if(matchesOLD == matchesNEW){
+    //swapping = true;
+    firstTBS.type = typeF;
+    secondTBS.type = typeS;
+    moves++;
+  }
 }
 
   Candy getCandy(int i, int j){
