@@ -109,8 +109,8 @@ public class board{
   
   void updateBoard(ArrayList<Candy> tobreak){
     Candy elim;
-    while(tobreak.size() > 0){
-      elim = tobreak.remove(0);
+    for(int i = 0; i < tobreak.size(); i++){
+      elim = tobreak.get(i);
       board[elim.bcol][elim.brow] = null;
     }
     //call falling animation
@@ -148,6 +148,12 @@ public class board{
   }
   
   void fall(){
-    
+    for(int col = 0; col < board.length(); col++){
+      for(int row = 0; row < board[col].length(); row++){
+        if(board[col][row] == null){
+          
+        }
+      }
+    }
   }
 }

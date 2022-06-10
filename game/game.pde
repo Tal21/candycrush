@@ -2,14 +2,14 @@ String title = "CANDY CRUSH";
 int score = 0;
 int moves = 10;
 int level = 1;
-boolean ingame = true;
+boolean falling = false;
 float progress;
 board grid;
 Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
 
   private boolean inBounds(int r, int c){
-    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>//
+    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>// //<>//
   }
  //<>// //<>// //<>//
 
@@ -20,11 +20,11 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
     return;
   }
   
-  if(candyCLICK != null && clicked.size() == 0){ //<>//
+  if(candyCLICK != null && clicked.size() == 0){ //<>// //<>//
     clicked.add(candyCLICK); //<>// //<>// //<>// //<>// //<>//
   }
 else{
-      int row = (candyCLICK.x-30) / 70; //<>//
+      int row = (candyCLICK.x-30) / 70; //<>// //<>//
       int col = (candyCLICK.y-120) / 70; //<>//
      
       Candy thing = clicked.get(0); //<>// //<>// //<>//
@@ -69,10 +69,7 @@ void setup(){
 void draw(){
   //grid.display();
   //System.out.println("done");
-  
-<<<<<<< HEAD
  
-  if(ingame){
     //background
     PImage background = loadImage("backdrop.png");
     image(background, -300, 0);
@@ -93,7 +90,18 @@ void draw(){
     
     //run();
     grid.display();
-  }
+    if(falling){
+      
+    }else{
+      ArrayList<Candy> print = grid.checkBoard();
+      /*System.out.println(print.size());
+      while(print.size() > 0){
+        Candy test = print.remove(0);
+        System.out.println(test.brow + " " + test.bcol);
+      }
+      */
+      //grid.updateBoard(print);
+    }
 }
 
 boolean gameOver(){
@@ -120,13 +128,4 @@ float getProgress(){
 }
 
 void run(){
- 
-  ArrayList<Candy> print = grid.checkBoard();
-  /*System.out.println(print.size());
-  while(print.size() > 0){
-    Candy test = print.remove(0);
-    System.out.println(test.brow + " " + test.bcol);
-  }
-  */
-  //grid.updateBoard(print);
 }
