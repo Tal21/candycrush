@@ -7,6 +7,8 @@ public class Candy{
   int type;
   int scorePlus;
   int radius = 40;
+  boolean isFalling = false;
+  float falldist = 0;
   color[] colors = {color(255, 10, 10), color(10, 255, 10), color(255,165,0), color(10, 10, 255), color(200, 0, 200)};
   
   
@@ -27,10 +29,9 @@ public class Candy{
   } 
 
   
-  void display(){
-    fill(colors[type]);
-    circle(x,y,radius); //<>// //<>// //<>//
- //<>// //<>// //<>//
+  void display(){ //<>//
+    fill(colors[type]); //<>//
+    circle(x,y,radius); 
   }
   
   void setXY(int xNEW, int yNEW){
@@ -52,6 +53,19 @@ public class Candy{
   
   int getY(){
     return y;
+  }
+  
+  void setFalling(boolean change){
+    isFalling = change;
+    
+  }
+  
+  float getFallDist(){
+    return falldist;
+  }
+  
+  void setFallDist(float change){
+    falldist = change;
   }
   
   
