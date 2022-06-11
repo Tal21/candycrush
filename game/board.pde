@@ -118,8 +118,17 @@ public class board{
     for(int i = 0; i < tobreak.size(); i++){
       elim = tobreak.get(i);
       board[elim.bcol][elim.brow] = null;
+      for(int above = elim.brow -1; above > 0; above--){
+        board[elim.bcol][above+1] = board[elim.bcol][above];
+        if(board[elim.bcol][above+1] != null){
+          board[elim.bcol][above+1].setFalling(true);
+          board[elim.bcol][above+1].setFallDist(board[elim.bcol][above+1].getFallDist() + 70);
+        }
+      }
+      board[elim.bcol][0] = null;
     }
-    //falling = true;
+    if(tobreak.size() > 0){falling = true;}
+    System.out.println("updateboard");
   }
   
   boolean loseCheck(){
@@ -156,6 +165,21 @@ public class board{
       for(int rows = board[cols].length - 1; rows >= 0; rows--){
         //check if in place if not then move a little
         //if in place then everything snaps
+        /*
+        falling = false;
+        Candy current = board[cols][rows];
+        if(getCandyAt(current.x, current.y + current.radius) == null){
+          current.y += 20;
+          falling = true;
+        }
+        */
+        Candy current = board[cols][rows];
+        if(current.isFalling){
+          //SOMEHOW ACCOUNT FOR MORE THAN ONE CANDY
+          current.y += current.getFallDist()/100;
+          System.out.println("fall!");
+        }
+        
       }
       
     }
