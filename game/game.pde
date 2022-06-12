@@ -9,9 +9,9 @@ float progress;
 board grid;
 Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
- //<>// //<>// //<>//
+ //<>// //<>// //<>// //<>//
   private boolean inBounds(int r, int c){
-    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>// //<>// //<>// //<>// //<>//
+    return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>// //<>// //<>// //<>// //<>// //<>//
   }
  //<>// //<>// //<>//
 
@@ -20,18 +20,18 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
   
   if(candyCLICK == null){
     return;
-  } //<>// //<>//
-   //<>// //<>// //<>//
+  } //<>// //<>// //<>//
+   //<>// //<>// //<>// //<>//
   if(candyCLICK != null && clicked.size() == 0){ //<>// //<>//
     clicked.add(candyCLICK); //<>// //<>// //<>// //<>// //<>//
-  } //<>// //<>// //<>//
-else{ //<>// //<>// //<>//
+  } //<>// //<>// //<>// //<>//
+else{ //<>// //<>// //<>// //<>//
       int row = (candyCLICK.x-30) / 70; //<>// //<>//
-      int col = (candyCLICK.y-120) / 70; //<>// //<>// //<>// //<>//
+      int col = (candyCLICK.y-120) / 70; //<>// //<>// //<>// //<>// //<>//
      
-      Candy thing = clicked.get(0); //<>// //<>// //<>// //<>// //<>// //<>//
+      Candy thing = clicked.get(0); //<>// //<>// //<>// //<>// //<>// //<>// //<>//
       int rowOLD = (thing.x-30) / 70;
-      int colOLD = (thing.y-120) / 70; //<>// //<>// //<>// //<>//
+      int colOLD = (thing.y-120) / 70; //<>// //<>// //<>// //<>// //<>//
      
       for(int i = -1; i < 2; i++){ //<>// //<>// //<>//
         for(int j = -1; j < 2; j++){
@@ -39,7 +39,7 @@ else{ //<>// //<>// //<>//
             if(row+i == rowOLD && col+j == colOLD){
               clicked.add(candyCLICK);
             }
-          } //<>// //<>// //<>//
+          } //<>// //<>// //<>// //<>//
         }
       } //<>// //<>//
       
@@ -54,27 +54,33 @@ else{ //<>// //<>// //<>//
     run();
   } 
 
-}  //<>//
- //<>//
-void setup(){ //<>//
-  size(1000, 700); //<>// //<>// //<>// //<>//
-  progress = 0; //<>// //<>// //<>// //<>//
-  grid = new board(); //<>// //<>// //<>// //<>//
-  run(); //<>// //<>// //<>//
-  timer = 0; //<>//
 }  //<>// //<>//
  //<>// //<>//
- //<>// //<>//
- //<>// //<>//
+void setup(){ //<>//
+  size(1000, 700); //<>// //<>// //<>// //<>// //<>//
+  progress = 0; //<>// //<>// //<>// //<>// //<>//
+  grid = new board(); //<>// //<>// //<>// //<>// //<>//
+  run(); //<>// //<>// //<>// //<>//
+  timer = 0; //<>//
+  grid.display(); //<>//
+  ArrayList<Candy> check = grid.checkBoard(); //<>//
+  if(check.size() > 0){ //<>//
+    grid.updateBoard(check); //<>//
+    delay(5000);
+  }
+}  
+
+
+
 
 void draw(){
   //grid.display();
   //System.out.println("done");
- 
+  //<>//
   //background
   PImage background = loadImage("backdrop.png");
   image(background, -300, 0); //<>//
-  
+   //<>//
   
   //scorebox //<>// //<>//
   fill(255); //<>// //<>// //<>//
@@ -102,14 +108,19 @@ void draw(){
       timer--;
     }
   }else{
-    ArrayList<Candy> print = grid.checkBoard();
+    /*
+    ArrayList<Candy> check = grid.checkBoard();
+    if(check.size() > 0){
+      grid.updateBoard(check);
+    }
+    */
+    
     /*System.out.println(print.size());
     while(print.size() > 0){
       Candy test = print.remove(0);
       System.out.println(test.brow + " " + test.bcol);
     }
     */
-    grid.updateBoard(print);
   }
 }
 
@@ -118,9 +129,6 @@ boolean gameOver(){
 }
 
 void updateScore(){
-}
-
-void updateBoard(){
 }
 
 
