@@ -7,7 +7,7 @@ public class Candy{
   int type;
   int scorePlus;
   int radius = 40;
-  float falldist = 15;
+  float falldist = 60;
   color[] colors = {color(255, 10, 10), color(10, 255, 10), color(255,165,0), color(10, 10, 255), color(200, 0, 200)};
   
   
@@ -29,8 +29,30 @@ public class Candy{
 
   
   void display(){ //<>//
-    fill(colors[type]); //<>// //<>//
-    circle(x,y,radius);  //<>//
+    //fill(colors[type]); //<>// //<>// //<>//
+    //circle(x,y,radius);  //<>// //<>//
+    
+    if(type == 0){
+      PImage red = loadImage("redcandy.png");
+      red.resize(radius, radius);
+      image(red, x-radius/2, y-radius/2);
+    }else if(type == 1){
+      PImage green = loadImage("greencandy.png");
+      green.resize(radius, radius);
+      image(green, x-radius/2, y-radius/2);
+    }else if(type == 2){
+      PImage orange = loadImage("orangecandy.png");
+      orange.resize(radius, radius);
+      image(orange, x-radius/2, y-radius/2);
+    }else if(type == 3){
+      PImage blue = loadImage("bluecandy.png");
+      blue.resize(radius, radius);
+      image(blue, x-radius/2, y-radius/2);
+    }else if(type == 4){
+      PImage purple = loadImage("purplecandy.png");
+      purple.resize(radius, radius);
+      image(purple, x-radius/2, y-radius/2);
+    }
   }
   
   void setXY(int xNEW, int yNEW){
