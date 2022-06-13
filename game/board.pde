@@ -131,25 +131,28 @@ public class board{
             //update y location
             //board[col][above-1].y = board[col][above-1].y + 70;
             
-            //add fall dist
-            board[col][above-1].setFallDist(board[col][above-1].getFallDist() + 70);
             
             //switch spots in queue
+            board[col][above-1].brow += 1;
             board[col][above] = board[col][above -1];
             board[col][above -1] = null;
-            board[col][above].brow += 1;
             
-            //add to fallingCandies
-            if(!fallingCandies.contains(board[col][above])){
+            //set falling dist
+            board[col][above].setFallDist(board[col][above].getFallDist() + 70);
+            
+             //add to fallingCandies
+            if(fallingCandies.indexOf(board[col][above]) == -1){
               fallingCandies.add(board[col][above]);
+              
             }
          }
+         
         }
         if(board[col][0] == null){
           Candy generate = new Candy(col*70 + 30, 0, col,0);
           board[col][0] = generate;
           //add falling
-          generate.setFallDist(120);
+          generate.setFallDist(155);
           fallingCandies.add(generate);
         }
         //System.out.println(elim.brow + " " + elim.bcol);
@@ -220,8 +223,10 @@ public class board{
     for(int i = 0; i < fallingCandies.size(); i++){
       Candy current = fallingCandies.get(i);
       current.y += current.getFallDist()/100;
-      System.out.println( current.getFallDist());
+      System.out.println(current.brow + " " + current.bcol);
     }
+    
+    System.out.println("done");
     
   }
   
