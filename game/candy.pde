@@ -28,21 +28,11 @@ public class Candy{
   } 
 
   
-<<<<<<< HEAD
+
   void display(){ //<>// //<>//
-    //fill(colors[type]); //<>// //<>// //<>// //<>//
-    //circle(x,y,radius);  //<>// //<>//
-    if(type == -1){
-      fill(color(255,255,255));
-      circle(x,y,radius);
-    }
-    
-=======
-  void display(){ //<>//
-    //fill(colors[type]); //<>// //<>// //<>// //<>//
+    //fill(colors[type]); //<>// //<>// //<>// //<>// //<>//
     //circle(x,y,radius);  //<>// //<>// //<>// //<>//
-     //<>//
->>>>>>> acb0bbd9c4e646c7908ed8248c1d60e4b2434dae
+
     if(type == 0){
       PImage red = loadImage("redcandy.png");
       red.resize(radius, radius);
@@ -63,6 +53,9 @@ public class Candy{
       PImage purple = loadImage("purplecandy.png");
       purple.resize(radius, radius);
       image(purple, x-radius/2, y-radius/2);
+    }if(type == -1){
+      fill(color(255,255,255));
+      circle(x,y,radius);
     }
   }
   

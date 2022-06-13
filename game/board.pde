@@ -3,7 +3,8 @@ public class board{
   int height = 8;
   Candy[][] board = new Candy[height][width];
   ArrayList<Candy> fallingCandies = new ArrayList<Candy>();
-
+  //float dropTimer;     commented until further notice, depending on whether or not we animate
+  //float swapTimer;
   
   public board(){
     for(int i = 0; i < board.length; i++){
@@ -48,6 +49,7 @@ public class board{
   int matchesNEW = (checkBoard()).size();
   
   if(matchesNEW == 0){
+    //swapping = true;
     firstTBS.type = typeF;
     secondTBS.type = typeS;
     moves++;
@@ -68,7 +70,7 @@ public class board{
     
     //vertical
     for(int i = 0; i < board.length; i++){
-      if(getCandy(i,0).type != -1){typecheck = board[i][0].getType();}
+      if(board[i][0] != null){typecheck = board[i][0].getType();}
       
       for(int j = 0; j < board[i].length; j++){
         if(board[i][j] != null){
@@ -115,29 +117,33 @@ public class board{
     return output;
   }
   
-  
-  
   void updateBoard(ArrayList<Candy> tobreak){
-
-    for(int i = 0; i < tobreak.size(); i++){
-      Candy elim = tobreak.get(i);
-      elim.type = -1;
-    }
     
-    for(int r = 7; r > -1; r--){
-      for(int c = 0; c < 8; c++){
-        if(getCandy(r,c).type == -1){
-          int count = r;
-          while(count > -1){
-            if(count == 0){
-              getCandy(count, c).type = (int)(Math.random() * (5-1+1));
-            }
-            getCandy(count,c).type = getCandy(count-1,c).type;
-            count--;
-          }
+    for(int counter = 0; counter < tobreak.size(); counter++){
+      falling = true;
+      Candy elim = tobreak.get(counter);
+      board[elim.bcol][elim.brow] = null;
+      int rowcount = elim.brow - 1;
+      
+      while (rowcount >= 0){
+        //board[elim.bcol][rowcount].brow += 1;
+        //board[elim.bcol][rowcount +1] = board[elim.bcol][rowcount];
+        if(board[elim.bcol][rowcount] != null){
+          fallingCandies.add(board[elim.bcol][rowcount]);
+          
+        }else{
+          //Candy generate = new Candy(elim.bcol*70 + 30, 50, elim.bcol, rowcount);
+          //for (int i = 0; i <= rowcount; i++){
+            //fallingCandies.add(generate);
+          //}
+          
         }
+        rowcount --;
       }
+      
     }
+      
+    
   }
   
   void updateBoard2(){
@@ -148,23 +154,28 @@ public class board{
        board[move.bcol][move.brow +1] = board[move.bcol][move.brow];
        board[move.bcol][move.brow +1].brow += 1;
        */
-       board[(move.x - 30) / 70][(move.y - 120) / 70] = move;
-       
-=======
+       if(move.y < 610){
+         board[move.bcol][(move.y - 120) / 70] = move;
+         move.brow = (move.y - 120) / 70;
+      }
+    }
     
   }
-  
   
   boolean loseCheck(){
     for( int i = 0; i < height; i++){
       for(int j = 0; j < width; j++){
         
       }
->>>>>>> acb0bbd9c4e646c7908ed8248c1d60e4b2434dae
     }
-    
+    return false;
+  }
+  
+  boolean powerActivated(){
+    return false;
   }
 
+  
   void display(){
     for(int i = 0; i < board.length; i++){
       for(int j = 0; j < board[i].length; j++){
@@ -180,44 +191,12 @@ public class board{
     return false;
   }
   
-<<<<<<< HEAD
   void fall(){
-    /*
-    for(int cols = 0; cols < board.length; cols++){
-      for(int rows = board[cols].length - 1; rows >= 0; rows--){
-        //check if in place if not then move a little
-        //if in place then everything snaps
-        /*
-        falling = false;
-        Candy current = board[cols][rows];
-        if(getCandyAt(current.x, current.y + current.radius) == null){
-          current.y += 20;
-          falling = true;
-        }
-       //OR
-        Candy current = board[cols][rows];
-        if(current.isFalling){
-          //SOMEHOW ACCOUNT FOR MORE THAN ONE CANDY
-          current.y += current.getFallDist()/100;
-          System.out.println("fall!");
-        }
-        
-      }
-      
-    }
-    */
     for(int i = 0; i < fallingCandies.size(); i++){
       Candy current = fallingCandies.get(i);
       current.y += 70/10;
       //System.out.println(current.brow + " " + current.bcol);
     }
-    
-    for(int j = 0; j < board.length; j++){
-      
-    }
-    
   }
-=======
->>>>>>> acb0bbd9c4e646c7908ed8248c1d60e4b2434dae
-  
-}
+    
+ }
