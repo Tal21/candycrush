@@ -8,7 +8,6 @@ public class Candy{
   int type;
   int scorePlus;
   int radius = 40;
-  float falldist = 60;
   color[] colors = {color(255, 10, 10), color(10, 255, 10), color(255,165,0), color(10, 10, 255), color(200, 0, 200)};
   
   int WHITE = -1;
@@ -29,6 +28,7 @@ public class Candy{
   } 
 
   
+<<<<<<< HEAD
   void display(){ //<>// //<>//
     //fill(colors[type]); //<>// //<>// //<>// //<>//
     //circle(x,y,radius);  //<>// //<>//
@@ -37,6 +37,12 @@ public class Candy{
       circle(x,y,radius);
     }
     
+=======
+  void display(){ //<>//
+    //fill(colors[type]); //<>// //<>// //<>// //<>//
+    //circle(x,y,radius);  //<>// //<>// //<>// //<>//
+     //<>//
+>>>>>>> acb0bbd9c4e646c7908ed8248c1d60e4b2434dae
     if(type == 0){
       PImage red = loadImage("redcandy.png");
       red.resize(radius, radius);
@@ -77,18 +83,9 @@ public class Candy{
     return x;
   }
   
-  int getY(){
+int getY(){
     return y;
   }
-  
-  float getFallDist(){
-    return falldist;
-  }
-  
-  void setFallDist(float change){
-    falldist = change;
-  }
-  
   
   
   

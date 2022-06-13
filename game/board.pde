@@ -3,8 +3,7 @@ public class board{
   int height = 8;
   Candy[][] board = new Candy[height][width];
   ArrayList<Candy> fallingCandies = new ArrayList<Candy>();
-  //float dropTimer;     commented until further notice, depending on whether or not we animate
-  //float swapTimer;
+
   
   public board(){
     for(int i = 0; i < board.length; i++){
@@ -49,7 +48,6 @@ public class board{
   int matchesNEW = (checkBoard()).size();
   
   if(matchesNEW == 0){
-    //swapping = true;
     firstTBS.type = typeF;
     secondTBS.type = typeS;
     moves++;
@@ -125,6 +123,7 @@ public class board{
       elim.type = -1;
     }
     
+<<<<<<< HEAD
     for(int r = 7; r > -1; r--){
       for(int c = 0; c < 8; c++){
         if(getCandy(r,c).type == -1){
@@ -151,6 +150,17 @@ public class board{
        */
        board[(move.x - 30) / 70][(move.y - 120) / 70] = move;
        
+=======
+    
+  }
+  
+  
+  boolean loseCheck(){
+    for( int i = 0; i < height; i++){
+      for(int j = 0; j < width; j++){
+        
+      }
+>>>>>>> acb0bbd9c4e646c7908ed8248c1d60e4b2434dae
     }
     
   }
@@ -170,6 +180,7 @@ public class board{
     return false;
   }
   
+<<<<<<< HEAD
   void fall(){
     /*
     for(int cols = 0; cols < board.length; cols++){
@@ -206,5 +217,7 @@ public class board{
     }
     
   }
+=======
+>>>>>>> acb0bbd9c4e646c7908ed8248c1d60e4b2434dae
   
 }
