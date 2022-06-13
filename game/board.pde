@@ -2,6 +2,7 @@ public class board{
   int width = 8;
   int height = 8;
   Candy[][] board = new Candy[height][width];
+  ArrayList<Candy> fallingCandies = new ArrayList<Candy>();
   //float dropTimer;     commented until further notice, depending on whether or not we animate
   //float swapTimer;
   
@@ -52,6 +53,9 @@ public class board{
     firstTBS.type = typeF;
     secondTBS.type = typeS;
     moves++;
+  }else{
+    ArrayList<Candy> print = grid.checkBoard();
+    updateBoard(print);
   }
 }
 
@@ -114,6 +118,7 @@ public class board{
   }
   
   void updateBoard(ArrayList<Candy> tobreak){
+<<<<<<< HEAD
     Candy elim;
     for(int i = 0; i < tobreak.size(); i++){
       elim = tobreak.get(i);
@@ -121,8 +126,54 @@ public class board{
       board[elim.bcol][elim.brow] = null;
     }
     //call falling animation
+=======
+>>>>>>> 4537e0bd3e0f64314ff57444483a940ea9c1cf78
     
-    //return board;
+    if(tobreak.size() > 0){
+      falling = true;
+      
+      for(int counter = 0; counter < tobreak.size(); counter++){
+        Candy elim = tobreak.get(counter);
+        int col = elim.bcol;
+        board[col][elim.brow] = null;
+        for(int above = elim.brow; above >= 1; above--){
+          if(board[col][above] == null && board[col][above-1] != null){
+            //update y location
+            //board[col][above-1].y = board[col][above-1].y + 70;
+            
+            
+            //switch spots in queue
+            board[col][above-1].brow += 1;
+            board[col][above] = board[col][above -1];
+            board[col][above -1] = null;
+            
+            //set falling dist
+            board[col][above].setFallDist(board[col][above].getFallDist() + 70);
+            
+             //add to fallingCandies
+            if(fallingCandies.indexOf(board[col][above]) == -1){
+              fallingCandies.add(board[col][above]);
+              
+            }
+         }
+         
+        }
+        if(board[col][0] == null){
+          Candy generate = new Candy(col*70 + 30, 0, col,0);
+          board[col][0] = generate;
+          //add falling
+          generate.setFallDist(155);
+          fallingCandies.add(generate);
+        }
+        //System.out.println(elim.brow + " " + elim.bcol);
+      }
+    }
+    /*
+    for(int i = 0; i < fallingCandies.size(); i++){
+      Candy current = fallingCandies.get(i);
+     System.out.println(current.brow + " " + current.bcol);
+    }
+    */
   }
   
   boolean loseCheck(){
@@ -155,12 +206,38 @@ public class board{
   }
   
   void fall(){
-    for(int col = 0; col < board.length; col++){
-      for(int row = 0; row < board[col].length; row++){
-        if(board[col][row] == null){
-          
+    /*
+    for(int cols = 0; cols < board.length; cols++){
+      for(int rows = board[cols].length - 1; rows >= 0; rows--){
+        //check if in place if not then move a little
+        //if in place then everything snaps
+        /*
+        falling = false;
+        Candy current = board[cols][rows];
+        if(getCandyAt(current.x, current.y + current.radius) == null){
+          current.y += 20;
+          falling = true;
         }
+       //OR
+        Candy current = board[cols][rows];
+        if(current.isFalling){
+          //SOMEHOW ACCOUNT FOR MORE THAN ONE CANDY
+          current.y += current.getFallDist()/100;
+          System.out.println("fall!");
+        }
+        
       }
+      
     }
+    */
+    for(int i = 0; i < fallingCandies.size(); i++){
+      Candy current = fallingCandies.get(i);
+      current.y += current.getFallDist()/100;
+      System.out.println(current.brow + " " + current.bcol);
+    }
+    
+    System.out.println("done");
+    
   }
+  
 }
