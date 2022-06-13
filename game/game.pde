@@ -62,7 +62,10 @@ void setup(){ //<>//
   grid = new board(); //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>//
   run(); //<>// //<>// //<>// //<>// //<>// //<>// //<>//
   timer = -1; //<>//
-   //<>// //<>//
+  ArrayList<Candy> check = grid.checkBoard();
+  if(check.size() > 0){
+    grid.updateBoard(check);
+  }
 }   //<>// //<>//
  //<>// //<>//
  //<>// //<>//
@@ -100,7 +103,8 @@ void draw(){
     }else if(timer == 0){
       timer = -1;
       falling = false;
-      grid.updateBoard2();
+      //grid.updateBoard2();
+      grid.fallingCandies.clear();
     }else{
       grid.fall();
       timer--;
@@ -108,6 +112,7 @@ void draw(){
   }else{
     ArrayList<Candy> check = grid.checkBoard();
     if(check.size() > 0){
+      grid.fallingCandies.clear();
       grid.updateBoard(check);
     }
   }

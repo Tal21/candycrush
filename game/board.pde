@@ -118,7 +118,6 @@ public class board{
   }
   
   void updateBoard(ArrayList<Candy> tobreak){
-    
     for(int counter = 0; counter < tobreak.size(); counter++){
       falling = true;
       Candy elim = tobreak.get(counter);
@@ -126,10 +125,16 @@ public class board{
       int rowcount = elim.brow - 1;
       
       while (rowcount >= 0){
-        //board[elim.bcol][rowcount].brow += 1;
-        //board[elim.bcol][rowcount +1] = board[elim.bcol][rowcount];
+        board[elim.bcol][rowcount].brow += 1;
+        board[elim.bcol][rowcount +1] = board[elim.bcol][rowcount];
         if(board[elim.bcol][rowcount] != null){
           fallingCandies.add(board[elim.bcol][rowcount]);
+          
+        }else{
+          //Candy generate = new Candy(elim.bcol*70 + 30, 50, elim.bcol, rowcount);
+          //for (int i = 0; i <= rowcount; i++){
+            //fallingCandies.add(generate);
+          //}
           
         }
         rowcount --;
@@ -149,9 +154,10 @@ public class board{
        board[move.bcol][move.brow +1] = board[move.bcol][move.brow];
        board[move.bcol][move.brow +1].brow += 1;
        */
-       board[move.bcol][(move.y - 120) / 70] = move;
-       //move.brow = (move.y - 120) / 70;
-       
+       if(move.y < 610){
+         board[move.bcol][(move.y - 120) / 70] = move;
+         move.brow = (move.y - 120) / 70;
+      }
     }
     
   }
