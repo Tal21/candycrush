@@ -29,8 +29,8 @@ public class Candy{
 
   
   void display(){ //<>//
-    //fill(colors[type]); //<>// //<>// //<>//
-    //circle(x,y,radius);  //<>// //<>//
+    //fill(colors[type]); //<>// //<>// //<>// //<>//
+    //circle(x,y,radius);  //<>// //<>// //<>//
     
     if(type == 0){
       PImage red = loadImage("redcandy.png");
@@ -72,7 +72,7 @@ public class Candy{
     return x;
   }
   
-  int getY(){
+int getY(){
     return y;
   }
   
