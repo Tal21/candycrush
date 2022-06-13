@@ -3,6 +3,14 @@ APCS Final Project Nickolaos Hatzigeorgiou and Talia
 Prototype Link: https://docs.google.com/document/d/1KbqM_IRo_dKHLlMZM43YCHkU-bXsBfbjUsPQSwVE0Y0/edit
 UML Diagram Link: https://lucid.app/lucidchart/80d77052-2d69-455b-a989-8638adfc5411/edit?invitationId=inv_4ba46a2a-fe38-42ca-a3c5-4b90e1cbaa4b&page=0_0#
 
+HOW TO RUN:
+
+
+Make sure to have all the pictures put inside the game folder. Afterwards, running the game should take you to the candy crush screen.
+Unfortunately, the game itself isn't very playable. It was messed up by the animation and our methods stopped working as planned.
+But the setting, the animation, and the images work. The swapping does too sometimes (click two candies that are next to each other).
+
+
 
 May 24: (BOTH NICKO AND TALIA) Fully understood how to git merge. Also made all the files needed for the project and started to write code in the setup (background)
 
