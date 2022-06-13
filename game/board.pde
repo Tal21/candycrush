@@ -118,12 +118,12 @@ public class board{
   
   
   void updateBoard(ArrayList<Candy> tobreak){
+
     for(int i = 0; i < tobreak.size(); i++){
       Candy elim = tobreak.get(i);
       elim.type = -1;
     }
     
-<<<<<<< HEAD
     for(int r = 7; r > -1; r--){
       for(int c = 0; c < 8; c++){
         if(getCandy(r,c).type == -1){
