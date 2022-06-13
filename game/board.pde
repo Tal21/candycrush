@@ -117,6 +117,7 @@ public class board{
     Candy elim;
     for(int i = 0; i < tobreak.size(); i++){
       elim = tobreak.get(i);
+      score += 100;
       board[elim.bcol][elim.brow] = null;
     }
     //call falling animation

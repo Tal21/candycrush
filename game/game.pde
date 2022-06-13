@@ -7,6 +7,10 @@ float progress;
 board grid;
 Candy a;
 ArrayList<Candy> clicked = new ArrayList<Candy>();
+boolean PLAY = false;
+boolean end = false;
+
+
 
   private boolean inBounds(int r, int c){
     return 0 <= r && 0 <= c && grid.width > r && grid.height > c; //<>// //<>// //<>// //<>//
@@ -14,8 +18,9 @@ ArrayList<Candy> clicked = new ArrayList<Candy>();
  //<>// //<>// //<>//
 
   void mouseClicked(){
+
   Candy candyCLICK = grid.getCandyAt(mouseX,mouseY);
-  
+  if(PLAY = true){
   if(candyCLICK == null){
     return;
   }
@@ -51,7 +56,7 @@ else{
     moves--;
  //   run();
   }  //<>//
- //<>//
+  } //<>//
 }
   //<>//
    //<>// //<>//
@@ -69,7 +74,11 @@ void setup(){ //<>//
 void draw(){
   //grid.display();
   //System.out.println("done"); //<>//
-  //<>//
+    if((grid.checkBoard()).size() == 0 && moves != 0 && end == false){
+        PLAY = true;
+    } else{
+      PLAY = false;
+    } //<>//
     //background
     PImage background = loadImage("backdrop.png");
     image(background, -300, 0); //<>//
@@ -87,6 +96,25 @@ void draw(){
     fill(0);
     text("Moves: "+ moves, 725, 175);
     
+    fill(255);
+    rect(700, 250, 200, 70);
+    fill(0);
+    text(title, 725, 275);
+    text("GET 1000 POINTS", 725, 300);
+    
+    if(score >= 1000){
+    fill(255);
+    rect(700, 350, 200, 70);
+    fill(0);
+    text("YOU WIN! :D", 725, 375);
+    }
+    
+    else if(moves == 0){
+    fill(255);
+    rect(700, 350, 200, 70);
+    fill(0);
+    text("YOU LOSE! D:", 725, 375);
+    }
     
     //run();
     grid.display();
